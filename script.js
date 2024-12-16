@@ -51,7 +51,7 @@ function showMovies(movies) {
     <img src="${API_IMAGE_URL + poster_path + video}" alt="HTML THE MOVIE IMAGE"/>
     <div>
     <h3>${title}</h3>
-    <h6>${overview.substring(0,500)}....</h6><hr>
+    <h6>${overview.substring(0,85)}....</h6><hr>
     <p>Popularity :${popularity}% <br/> Vote Avg :${vote_average}</p>
     </div>`         
     moviesElement.appendChild(movieCard)              //mengisi anak ke parents
