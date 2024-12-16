@@ -14,13 +14,13 @@ async function getMovies(url) {
 //Pagination
 function nextPage(){
   if(page>=1){
-  page +=1;
+  page ++;
   updatePage()
   }
 }
 function prevPage(){
   if(page>1){
-  page -=1
+  page --;
   updatePage()
   } 
 }
@@ -49,7 +49,7 @@ function showMovies(movies) {
     <img src="${API_IMAGE_URL + poster_path}" alt="HTML THE MOVIE IMAGE"/>
     <div class="detail">
     <h3>${title}</h3>
-    <p>${overview.substring(0,150)}....</p> <br/>
+    <p>${overview.substring(0,150)}....</p> <br/><hr>
     <p>Popularity :${popularity}% <br/> Vote Avg :${vote_average}</p>
     </div>`         
     moviesElement.appendChild(movieCard)              //mengisi anak ke parents
@@ -57,14 +57,15 @@ function showMovies(movies) {
 }
 
 //form search
+// use submit
 searchForm.addEventListener("submit",(event)=>{
-event.preventDefault()
-const searchQuery = search.value
+  event.preventDefault()
+  const searchQuery = search.value
 
-if(searchQuery!==''){
-  getMovies(API_SEARCH_URL + searchQuery)
-  search.value=''
-}
+  if(searchQuery !==''){
+    getMovies(API_SEARCH_URL + searchQuery)
+    search.value=''
+  }
 })
 
 //title
