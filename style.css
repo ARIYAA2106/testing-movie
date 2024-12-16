@@ -4,10 +4,13 @@
     box-sizing: border-box;
 }
 header{
+    position: sticky;
+    top: 0;
     background-color: aqua;
     display: flex;
     justify-content: space-between;
-    padding: 18px;
+    padding: 10px;
+    box-shadow: 1px 1px 1px black;
     align-items: center;
 }
 .searchInput{
@@ -75,11 +78,51 @@ header{
 
 /* Ponsel */
 @media only screen and (max-width:800px) {
-  .searchInput{
-    margin-right: 60px;
-  }
-  #moviesElement{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+ 
+    #moviesElement{
+        display: grid;
+        padding: 16px;
+        font-size: 12px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .btn{
+        
+      }
+      .btn:hover{
+        background-color: rgb(66, 64, 64);   
+    }
+    #title{
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .searchInput{
+        background-color: transparent;
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 6px;
+    }
+}
+@media only screen and (max-width:500px){
+    #moviesElement{
+        display: grid;
+        padding: 10px;
+        font-size: 12px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .btn{
+        
+      }
+      .btn:hover{
+        background-color: rgb(66, 64, 64);   
+    }
+    #title{
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .searchInput{
+        background-color: transparent;
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 6px;
+    }
 }

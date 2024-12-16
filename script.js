@@ -40,16 +40,18 @@ function updatePage(){
 function showMovies(movies) {
   moviesElement.innerHTML = ''                       //panggil id data dari HTML 
   movies.forEach((movie) => {                       //mapping ( LOOPING PERULANGAN )
-    const { title, poster_path, overview, popularity, vote_average } = movie; //variabel dengan nilai ambil data dari movie
+    const { title, poster_path, overview, popularity, vote_average,
+      video } = movie; //variabel dengan nilai ambil data dari movie
     const movieCard = document.createElement('div') //Variabel menanampung element dari div
     movieCard.classList.add("movie")                //Styling / membuat class
+    
 
 //Memunculkan + styling kedalam halaman HTML
     movieCard.innerHTML = `                 
-    <img src="${API_IMAGE_URL + poster_path}" alt="HTML THE MOVIE IMAGE"/>
-    <div class="detail">
+    <img src="${API_IMAGE_URL + poster_path + video}" alt="HTML THE MOVIE IMAGE"/>
+    <div>
     <h3>${title}</h3>
-    <p>${overview.substring(0,150)}....</p> <br/><hr>
+    <h6>${overview.substring(0,500)}....</h6><hr>
     <p>Popularity :${popularity}% <br/> Vote Avg :${vote_average}</p>
     </div>`         
     moviesElement.appendChild(movieCard)              //mengisi anak ke parents
